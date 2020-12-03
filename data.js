@@ -201,3 +201,39 @@ var zodiacs = [
     description: "Capricorn is a sign that represents time and responsibility, and its representatives are traditional and often very serious by nature. These individuals possess an inner state of independence that enables significant progress both in their personal and professional lives. They are masters of self-control and have the ability to lead the way, make solid and realistic plans, and manage many people who work for them at any time. They will learn from their mistakes and get to the top based solely on their experience and expertise. "
   }
 ];
+
+var clickedZodiac;
+
+$(document).ready(function() {
+  var templateText = $("#task4-content").html();
+  var templateScript = Handlebars.compile(templateText);
+  var html = templateScript({ zodiacs: zodiacs });
+  $("#task4-content-target").html(html);
+  
+
+  $(document).on("click","#zodiac-detail",function() {
+    var varclickedZodiacName = $(this).attr('class');
+    
+    for (let i = 0; i < zodiacs.length; i++){
+      let cp = varclickedZodiacName.localeCompare(zodiacs[i]["name"]);
+      if (cp == 0) {
+        clickedZodiac = zodiacs[i];
+        break;
+      }
+    }
+  });
+});
+
+// $(document).ready(function() {
+  
+//   var templateText1 = $("#template1").html();
+//   var templateScript1 = Handlebars.compile(templateText1);
+//   var html1 = templateScript1(clickedZodiac);
+//   $('#template1-target').html(html1);
+
+//   var templateText2 = $("#template1").html();
+//   var templateScript2 = Handlebars.compile(templateText2);
+//   var html2 = templateScript1(clickedZodiac);
+//   $('#template2-target').html(html2);
+// });
+
