@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>TV Sales</title>
+
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+</head>
+
+<body>
+    <!--header-->
+    <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/index.htm"><span class="glyphicon glyphicon-home"></span> Home</a>
+                </li>
+                <li><a href="/task1.htm">1. Jars Saving</a></li>
+                <li><a href="/task2.htm">2. Inspiring Quotes</a></li>
+                <li><a href="/task3.htm">3. TV Sales</a></li>
+                <li><a href="/task4.htm">4. Zodiac Characteristics</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--/header-->
+    <!--contain-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item" id = "1"><a href="task3.htm-ss">Samsung</a></li>
+                    <li class="list-group-item" id = "2"><a href="task3.htm-sn">Sony</a></li>
+                    <li class="list-group-item" id = "3"><a href="task3.htm-pn">Panasonic</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div id="products" class="row list-group"> 
+                    {{#each products}} 
+                    <div class="item col-xs-4 col-lg-4" id="{{this.title}}">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="/images/{{this.imagePath}}" alt="">
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">{{this.title}}</h4>
+                                <p class="group inner list-group-item-text">{{this.description}}</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">{{this.price}} VNĐ</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="#">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/contain-->
+    <!--footer-->
+    <footer class="container-fluid text-center">
+        Copyright &copy; 2020 by 18127110 - Tran Dinh Huy
+    </footer>
+    <!--/footer-->
+</body>
+
+</html>
